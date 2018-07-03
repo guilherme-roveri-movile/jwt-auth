@@ -41,7 +41,7 @@ public class JwtTokenProvider {
         try {
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
         } catch (RuntimeException e) {
-            throw new InvalidTokenException();
+            throw new InvalidTokenException(e);
         }
     }
 
